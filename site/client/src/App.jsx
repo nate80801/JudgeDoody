@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import About from './pages/About';
 import Docs from './pages/Docs';
 import Home from './pages/Home';
@@ -17,6 +18,7 @@ const Layout = () => {
         <>
             <Navbar/>
             <Outlet/>
+            <Footer/>
         </>
     );
 };
