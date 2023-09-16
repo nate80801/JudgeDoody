@@ -1,7 +1,7 @@
 import discord
 import chat as doody
 import traceback
-import trial
+import time
 
 class doc:
     def __init__(self):
@@ -61,15 +61,7 @@ def run_discord_bot():
     Not_guilty = 0
 
 
-    @client.event
-    async def on_reaction_add(reaction):
-        global Guilty, Not_guilty  # Declare variables as global
 
-        # Check for "yes" and "no" reactions and update counters
-        if reaction.emoji == "👍":
-            Guilty += 1
-        elif reaction.emoji == "👎":
-            Not_guilty += 1
 
 
     async def jury_verdict(guilty, not_guilty):
@@ -79,6 +71,7 @@ def run_discord_bot():
             return ("The jury finds the defendant not guilty of all charges")
         else:
             return("")
+
     async def send_message(message, chan, user):
         await chan.send(message)
         transcript.log(f"@{user}: {message}")
@@ -88,14 +81,17 @@ def run_discord_bot():
 
     @client.event
     async def on_message(message):
-        if message.content == "Court starts now":
-            global ls
-            ls = message.reactions
+
         if message.author == client.user:
             return
+        if message.content == "/help":
+            await send_message(doody.commands, message.channel, message.author)
+
         if message.content == "/quit":
             # Quit
             CASE.change("default", "default", "default")
+            transcript.t.clear()
+
             print("Quit")
             return
 
@@ -103,9 +99,29 @@ def run_discord_bot():
             # Sent a message DURING a case
             if (CASE.turn == CASE.defendant) and str(message.content).lower() == "/rest":
                 # Break give verdict
+                await send_message("Gathering my thoughts...", message.channel, "Judge Doody")
+                await send_message("Considering jury decision...", message.channel, "Judge Doody")
+
+                # Wait 5 seconds to allow jury to decide
+                time.sleep(5)
+                chan = message.channel
+                jury_vote = await chan.fetch_message(chan.last_message_id)
+                rxns = jury_vote.reactions
+                print(rxns)
+
+                guilt, inn = 0, 0
+                for i in rxns:
+                    if i.emoji == "👎":
+                        guilt += 1
+                    elif i.emoji == "👍":
+                        inn += 1
+
+
+
                 flip_bool()
-                jur = await (jury_verdict(Guilty, Not_guilty))
+                jur = await (jury_verdict(guilt, inn))
                 transcript.log(str(jur))
+                print(jur)
 
                 response = await doody.final_judgement(transcript.reed(), CASE.crime)
 
@@ -117,6 +133,9 @@ def run_discord_bot():
                 for i in transcript.t:
                     f.write(i)
                     f.write("\n")
+                f.close()
+                CASE.change("default", "default", "default")
+                transcript.t.clear()
 
                 return
             # Evidence bringer upper
