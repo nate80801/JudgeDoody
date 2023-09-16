@@ -11,14 +11,21 @@ function Home() {
                 <div className='hero'>
                     <TypeAnimation
                         sequence={[
-                            'A striking voice of reason when you need it.'
+                            'A bot for the villains.',
+                            1000,
+                            'A bot for the menaces.',
+                            1000,
+                            'A bot for the goblins.',
+                            1000,
+                            'A bot for the unhinged.',
+                            1000,
                         ]}
                         wrapper="span"
                         speed={50}
                         style={{ fontSize: 50, fontWeight: 300, textAlign: 'center'}}
                         repeat={1}
                         />
-                    <button type='button'><h2>Invite JudgeDoody</h2></button>
+                    <button type='button'><h3>Invite JudgeDoody</h3></button>
                 </div>
                 <div className='logo'>
                     <img src={graphic} alt="judge graphic" />
