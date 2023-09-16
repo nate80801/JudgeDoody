@@ -5,29 +5,43 @@ import trial
 
 class doc:
     def __init__(self):
-        self.f = open("log.txt", 'w')
+        self.t = []
     def log(self, msg):
-        self.f.write(msg)
+        self.t.append(msg)
+    def reed(self):
+        return "".join(self.t)
 
 class case:
     def __init__(self, defendant, plaintiff, crime):
         self.defendant = defendant
         self.plaintiff = plaintiff
         self.crime = crime
+        self.turn = self.plaintiff
+
     def change(self, defendant, plaintiff, crime):
         self.defendant = defendant
         self.plaintiff = plaintiff
         self.crime = crime
+        self.turn = self.plaintiff
+
+
+    def turn_switch(self):
+        if str(self.turn) == str(self.plaintiff):
+            self.turn = self.defendant
+        else:
+            self.turn = self.plaintiff
+
 
 
 CASE = case("default", "default", "default")
-evidence = doc()
+transcript = doc()
 
 CASE_ON = False
 
 def flip_bool():
     global CASE_ON
     CASE_ON = not(CASE_ON)
+
 
 
 
@@ -42,45 +56,108 @@ def run_discord_bot():
     async def on_ready():
         print("Judge Doody on duty")
 
-    async def send_message(message):
-        await message.channel.send(message.content)
+
+    Guilty = 0
+    Not_guilty = 0
+
+
+    @client.event
+    async def on_reaction_add(reaction):
+        global Guilty, Not_guilty  # Declare variables as global
+
+        # Check for "yes" and "no" reactions and update counters
+        if reaction.emoji == "👍":
+            Guilty += 1
+        elif reaction.emoji == "👎":
+            Not_guilty += 1
+
+
+    async def jury_verdict(guilty, not_guilty):
+        if guilty > not_guilty:
+            return ("The jury finds the defendant guilty of all charges")
+        elif guilty < not_guilty:
+            return ("The jury finds the defendant not guilty of all charges")
+        else:
+            return("")
+    async def send_message(message, chan, user):
+        await chan.send(message)
+        transcript.log(f"@{user}: {message}")
 
 
 
 
     @client.event
     async def on_message(message):
+        if message.content == "Court starts now":
+            global ls
+            ls = message.reactions
         if message.author == client.user:
             return
         if message.content == "/quit":
             # Quit
+            CASE.change("default", "default", "default")
             print("Quit")
             return
-        user = str(message.author)
-        chan = (message.channel)
-        msg = str(message.content)
+
         if CASE_ON:
             # Sent a message DURING a case
-            if msg == "/done":
+            if (CASE.turn == CASE.defendant) and str(message.content).lower() == "/rest":
                 # Break give verdict
                 flip_bool()
-                response = doody.final_judgement(evidence.f, CASE.crime)
+                jur = await (jury_verdict(Guilty, Not_guilty))
+                transcript.log(str(jur))
 
-                await send_message(response)
+                response = await doody.final_judgement(transcript.reed(), CASE.crime)
+
+
+                await send_message("\n".join(response), message.channel, "Judge Doody")
+                transcript.log(f"\nVERDICT: {response[0]}\nSENTENCE: {response[1]} ")
+
+                f = open("log.txt", 'w')
+                for i in transcript.t:
+                    f.write(i)
+                    f.write("\n")
 
                 return
-            doc.log(str(message.content))
-            await send_message("The other side may speak now")
+            # Evidence bringer upper
+            transcript.log(f"@{str(message.author)}: {str(message.content)}\n")
+
+            CASE.turn_switch()
+            await send_message(f"{CASE.turn} , could you briefly explain your side of the story?", message.channel, "Judge Doody")
+
         else:
-            if msg[:4] == "/sue":
+            msg = str(message.content)
+            user = "@" + str(message.author)
+            if msg[:7] == "/accuse":
                 flip_bool()
-                msg = msg[4:]
+                msg = msg[8:]
                 CASE.change(msg[:msg.index(" ")], user, msg[msg.index(" ") + 1:])
-                await send_message(message)
+                await send_message("Court starts now", message.channel, "Judge Doody")
+                transcript.log(f"DEFENDANT: {CASE.defendant}\nPLAINTIFF: {CASE.plaintiff}\nCHARGES: {CASE.crime}\n")
+                await send_message(doody.opening_statement(CASE.defendant, CASE.plaintiff, CASE.crime), message.channel, "Judge Doody")
 
 
 
 
 
 
-            # Case is on, so we alternate between people talking
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    client.run(TOKEN)
