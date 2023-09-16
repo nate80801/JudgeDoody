@@ -32,7 +32,7 @@ function Home() {
                 </div>
             </div>
             <div className='body'>
-                <h1>a bot that serves justice</h1>
+                
             </div>
         </div>
     );

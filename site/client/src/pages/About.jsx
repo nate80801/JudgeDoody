@@ -9,7 +9,7 @@ function About() {
     return(
         <div className='about'>
             <div className='main'>
-                <h1>Created by a team that seeks justice <br></br>for all discord users</h1>
+                <h1>Created by a team that seeks justice <br></br>for all Discord users</h1>
                 <p>We know how it feels to get accused of the most awful, heinous, preposterous things when <br></br>on a call with friends on Discord. A word slips
                     out and suddenly you have a 1st degree felony.<br></br> JudgeDoody is there to serve swift and fair justice to those unrepresented in a voice channel.
                 </p>
@@ -48,6 +48,10 @@ function About() {
                     <div className='description'>
                         <h2>Daniel Gomez</h2>
                         <span>Bot Developer</span>
+                        <div className='icons'>
+                            <a href="https://github.com/DannyG75"><img style={{width: 30}}src={github} alt="github icon" /></a>
+                            <a href="https://www.linkedin.com/in/daniel-gomez-505627254/"><img style={{width: 30}}src={linkedin} alt="linkedin logo" /></a>
+                        </div>
                     </div>
                 </div>
             </div>
