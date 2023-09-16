@@ -1,5 +1,6 @@
 import discord
-
+import chat as Doody
+import traceback
 
 async def send_message(message, message_content):
     await message.channel.send(message_content)
@@ -25,16 +26,19 @@ def run_discord_bot():
     async def on_message(message):
         if message.author == client.user:
             return
+        try:
 
-        user = str(message.author)
-        msg = str(message.content)
-        chan = str(message.channel)
+            user = str(message.author)
+            msg = str(message.content)
+            chan = str(message.channel)
 
-        print(f" {user} sent {msg} to {chan} \n")
+            print(f" {user} sent {msg} to {chan} \n")
 
+            # Echo
+            await send_message(message, msg)
+        except:
+            traceback.print_exc()
 
-
-        await send_message(message, str(message.content))
 
 
     client.run(TOKEN)
