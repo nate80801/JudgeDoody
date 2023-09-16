@@ -114,7 +114,6 @@
             }
 
             .home {
-                margin-top: 87px;
                 
                 .main {
                     display: flex;
@@ -129,13 +128,14 @@
                         align-items: center;
                         flex: 3;
                         
-                        h1 {
+                        TypeAnimation {
                             font-size: 50px;
                             font-weight: 300;
                             text-align: center;
                         }
     
                         button {
+                            margin-top: 10px;
                             color: white;
                             width: 300px;
                             height: 75px;
