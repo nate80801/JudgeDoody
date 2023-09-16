@@ -1,5 +1,5 @@
 :root {
-    font-family: Calibri, sans-serif;
+    font-family: Open Sans, sans-serif;
     display: flex;
     justify-content: center;
     background-image: linear-gradient(to bottom right, #5865F2, #ACB2F9);
@@ -11,6 +11,7 @@
             width: 1200px;
     
             .navbar {
+                
                 .container {
                     display: flex;
                     flex-direction: row;
@@ -107,8 +108,13 @@
                 }
             }
 
+            .footer {
+                text-align: center;
+                margin: 50px;
+            }
+
             .home {
-                
+                margin-top: 87px;
                 
                 .main {
                     display: flex;
@@ -131,23 +137,34 @@
     
                         button {
                             color: white;
-                            width: 200px;
+                            width: 300px;
                             height: 75px;
                             border: none;
                             border-radius: 15px;
                             background-color: #5865F2;
                             cursor: pointer;
-    
+                            transition-duration: 0.4s;
+
                             h2 {
+                                text-align: center;
                                 font-weight: 200;
                                 font-size: 24px;
                             }
+                        }
+                        
+                        button:hover {
+                            background-color: #8A93F6;
                         }
                     }
     
                     .logo {
                         text-align: center;
                         flex: 2;
+
+                        img {
+                            width: 500px;
+                            border-radius: 25px;
+                        }
                     }
                 }
                 
@@ -156,6 +173,99 @@
                         font-size: 50px;
                         font-weight: 300;
                         text-align: center;
+                    }
+                }
+            }
+
+            .about {
+
+                .main {
+                    text-align: center;
+                    margin: 100px;
+                    h1 {
+                        font-weight: bolder;
+                    }
+
+                    p {
+                        font-size: 20px;
+                        font-weight: 100;
+                    }
+                }
+
+                .team {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    gap: 100px;
+                    
+                    .member {
+                        background-color: white;
+                        padding: 30px;
+                        padding-bottom: 10px;
+                        border-radius: 10px;
+                        
+                        .darrenHead {
+                            overflow: hidden;
+                            width: 300px;
+                            height: 400px;
+                            border-radius: 10px;
+
+                            img {
+                                zoom: 60%;
+                                margin: -400px 0px 0px -200px;
+                            }
+                
+                        
+                        } 
+                        .nathanHead {
+                            overflow: hidden;
+                            width: 300px;
+                            height: 400px;
+                            border-radius: 15px;
+
+                            img {
+                                zoom: 60%;
+                                margin: -100px 0px 0px 0px;
+                            }
+                
+                        
+                        } 
+                        
+                        .dannyHead {
+                            overflow: hidden;
+                            width: 300px;
+                            height: 400px;
+                            border-radius: 15px;
+
+                            img {
+                                zoom: 50%;
+                                margin: 0px 0px 0px -100px;
+                            }
+                
+                        
+                        } 
+                        
+                        .description {
+                            text-align: center;
+                            color: black;
+                            
+                            .icons {
+                                display: flex;
+                                justify-content: center;
+                                margin: 10px;
+                                gap: 10px;
+                            }
+                            h2 {
+                                font-weight: 300;
+                                margin-bottom: 1px;
+                            }
+
+                            span {
+                                font-size: 14px;
+                            }
+                            //background-color: white;
+                            //height: 200px;
+                        }
                     }
                 }
             }
