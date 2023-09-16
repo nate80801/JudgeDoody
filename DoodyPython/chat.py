@@ -13,7 +13,7 @@ def make_prompt(plaintiff, defendant, crime) -> str:
   """
 
 
-async def opening_statement(defendant, plaintiff, crime):
+def opening_statement(defendant, plaintiff, crime):
   response = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
     messages=[
