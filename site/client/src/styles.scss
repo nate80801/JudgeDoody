@@ -2,21 +2,25 @@
     font-family: Calibri, sans-serif;
     display: flex;
     justify-content: center;
-    background-color: black;
-    // min-height: 100vh;
+    background-image: linear-gradient(to bottom right, #5865F2, #ACB2F9);
+    min-height: 100vh;
     color: white;
    
     .app {
         .container {
-            width: 1024px;
+            width: 1200px;
     
             .navbar {
                 .container {
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
+                    align-items: center;
                     
                     .main {
+                        h1 {
+                            font-weight: 300;
+                        }
                         a:link {
                             color: white;
                             text-decoration: none;
@@ -71,29 +75,88 @@
                             color: white;
                             text-decoration: underline;
                         }
+
+                        button {
+                            margin-left: 10px;
+                            color: white;
+                            width: 60px;
+                            height: 30px;
+                            border: none;
+                            border-radius: 10px;
+                            background-color: #5865F2;
+                            align-items: center;
+                            cursor: pointer;
+                            transition-duration: 0.4s;
+
+                            a:hover {
+                                color: white;
+                                text-decoration: none;
+                            }
+                              
+                            a:active {
+                                color: white;
+                                text-decoration: none;
+                            }
+                        }
+
+                        button:hover {
+                            background-color: #8A93F6;
+                        }
+
                     }
                 }
             }
 
             .home {
-                .hero {
+                
+                
+                .main {
                     display: flex;
-                    flex-direction: column;
+                    flex-direction: row;
+                    // border: solid;
+                    height: 600px;
                     align-items: center;
 
-                    h1 {
-                        font-size: 50px;
+                    .hero {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        flex: 3;
+                        
+                        h1 {
+                            font-size: 50px;
+                            font-weight: 300;
+                            text-align: center;
+                        }
+    
+                        button {
+                            color: white;
+                            width: 200px;
+                            height: 75px;
+                            border: none;
+                            border-radius: 15px;
+                            background-color: #5865F2;
+                            cursor: pointer;
+    
+                            h2 {
+                                font-weight: 200;
+                                font-size: 24px;
+                            }
+                        }
+                    }
+    
+                    .logo {
                         text-align: center;
+                        flex: 2;
                     }
                 }
-
-                button {
-                    color: white;
-                    width: 200px;
-                    height: 75px;
-                    border: none;
-                    border-radius: 25px;
-                    background-color: #5865F2;
+                
+                .body {
+                    h1 {
+                        font-size: 50px;
+                        font-weight: 300;
+                        text-align: center;
+                    }
                 }
             }
             
