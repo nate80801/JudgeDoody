@@ -1,0 +1,102 @@
+:root {
+    font-family: Calibri, sans-serif;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    // min-height: 100vh;
+    color: white;
+   
+    .app {
+        .container {
+            width: 1024px;
+    
+            .navbar {
+                .container {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    
+                    .main {
+                        a:link {
+                            color: white;
+                            text-decoration: none;
+                        }
+
+                        a:visited {
+                            color: white;
+                            text-decoration: none;
+                        }
+                          
+                        a:hover {
+                            color: white;
+                            text-decoration: none;
+                        }
+                          
+                        a:active {
+                            color: white;
+                            text-decoration: none;
+                        }
+                    }
+                    .links {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+
+                        h4 {
+                            font-size: 16px;
+                            font-weight: 300;
+                        }
+    
+                        span {
+                            font-size: 16px;
+                            cursor: pointer;
+                        }
+    
+                        a:link {
+                            color: white;
+                            text-decoration: none;
+                        }
+    
+                        a:visited {
+                            color: white;
+                            text-decoration: none;
+                        }
+                          
+                        a:hover {
+                            color: white;
+                            text-decoration: underline;
+                        }
+                          
+                        a:active {
+                            color: white;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+
+            .home {
+                .hero {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    h1 {
+                        font-size: 50px;
+                        text-align: center;
+                    }
+                }
+
+                button {
+                    color: white;
+                    width: 200px;
+                    height: 75px;
+                    border: none;
+                    border-radius: 25px;
+                    background-color: #5865F2;
+                }
+            }
+            
+        }
+    }
+}
