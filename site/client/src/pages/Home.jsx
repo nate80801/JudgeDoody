@@ -21,11 +21,11 @@ function Home() {
                             1000,
                         ]}
                         wrapper="span"
-                        speed={50}
+                        speed={25}
                         style={{ fontSize: 50, fontWeight: 300, textAlign: 'center'}}
-                        repeat={1}
+                        repeat={0}
                         />
-                    <button type='button'><h3>Invite JudgeDoody</h3></button>
+                    <button type='button'><a href="https://discord.com/api/oauth2/authorize?client_id=1152453723591823422&permissions=68164943608512&scope=bot"><h2>Invite JudgeDoody</h2></a></button>
                 </div>
                 <div className='logo'>
                     <img src={graphic} alt="judge graphic" />
