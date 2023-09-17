@@ -1,37 +1,30 @@
-@Judge Doody: Court starts now
-DEFENDANT: <@459043754343530501>
-PLAINTIFF: @judgednd
-CHARGES: for fighting
+@Judge Truly: Court starts now
+DEFENDANT: <@187416591825108992>
+PLAINTIFF: @khiempossible
+CHARGES: for being sus
 
-@Judge Doody: Ladies and gentlemen, may I have your attention please. I am Judge Doody, presiding over this court today. We are gathered here to address a case of alleged fighting, with the defendant <@459043754343530501> being accused by the plaintiff @judgednd. It is my responsibility to ensure a fair and just trial, where both parties will have the opportunity to present their arguments and evidence. I urge all those involved to conduct themselves respectfully and adhere to the principles of justice as we commence the beginning of this trial. Plaintiff, you may now proceed with your opening statement.
-@judgednd: I saw him do it he is angry
+@Judge Truly: All rise. Court is now in session. I am Judge Truly, presiding over this trial. Today, we gather to seek the truth in the case of the plaintiff, @khiempossible, accusing the defendant, <@187416591825108992>, of being sus. It is our duty to weigh the evidence presented before us and come to a just conclusion. Let it be known that this courtroom is a place of order, respect, and fairness. Both parties will have the opportunity to present their arguments and evidence. May justice prevail as we commence the beginning of this trial. Plaintiff, you may now begin.
+@khiempossible: You are guilty
 
-@Judge Doody: <@459043754343530501> , could you briefly explain your side of the story?
-@Judge Doody: Gathering my thoughts...
-@Judge Doody: Considering jury decision...
-The jury finds the defendant not guilty of all charges
-@Judge Doody: My apologies for any confusion caused by my previous response. I appreciate your feedback and will take it into consideration for future cases. 
+@Judge Truly: <@187416591825108992> , could you briefly explain your side of the story?
+@goosemix: I’m not sus
 
-After carefully considering the evidence presented and the arguments made by both parties, I have reached a decision. 
+@Judge Truly: @khiempossible , could you briefly explain your side of the story?
+@khiempossible: Anthony type in /rest whenever you are done defending yourself
 
-Based on the information provided, the jury's decision, and my own evaluation of the case, I find the defendant, <@459043754343530501>, not guilty of the charges of fighting. 
+@Judge Truly: <@187416591825108992> , could you briefly explain your side of the story?
+@goosemix: no
 
-In this case, there is insufficient evidence and testimony to establish beyond a reasonable doubt that the defendant engaged in violent behavior or fought with the plaintiff. It is essential to uphold the principles of justice and fairness, ensuring that guilt is proven beyond a reasonable doubt before a conviction can be made.
+@Judge Truly: @khiempossible , could you briefly explain your side of the story?
+@goosemix: /rest
 
-Please note that, as a judge, it is not appropriate to make fun of anyone involved in a case, regardless of the outcome. My role is to remain impartial and treat all parties with respect.
+@Judge Truly: <@187416591825108992> , could you briefly explain your side of the story?
+@goosemix: no
 
-Thank you for your understanding.
-The punishment for the defendant is community service, attending anger management classes, and writing a letter of apology to the plaintiff.
+@Judge Truly: @khiempossible , could you briefly explain your side of the story?
+@goosemix: no
 
-VERDICT: My apologies for any confusion caused by my previous response. I appreciate your feedback and will take it into consideration for future cases. 
+@Judge Truly: <@187416591825108992> , could you briefly explain your side of the story?
+@goosemix: no
 
-After carefully considering the evidence presented and the arguments made by both parties, I have reached a decision. 
-
-Based on the information provided, the jury's decision, and my own evaluation of the case, I find the defendant, <@459043754343530501>, not guilty of the charges of fighting. 
-
-In this case, there is insufficient evidence and testimony to establish beyond a reasonable doubt that the defendant engaged in violent behavior or fought with the plaintiff. It is essential to uphold the principles of justice and fairness, ensuring that guilt is proven beyond a reasonable doubt before a conviction can be made.
-
-Please note that, as a judge, it is not appropriate to make fun of anyone involved in a case, regardless of the outcome. My role is to remain impartial and treat all parties with respect.
-
-Thank you for your understanding.
-SENTENCE: The punishment for the defendant is community service, attending anger management classes, and writing a letter of apology to the plaintiff. 
+@Judge Truly: @khiempossible , could you briefly explain your side of the story?

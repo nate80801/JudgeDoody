@@ -49,7 +49,7 @@ def run_discord_bot():
     print("running")
     intents = discord.Intents.default()
     intents.message_content = True
-    TOKEN = 'MTE1MjQ1MzcyMzU5MTgyMzQyMg.GNV8p9.gqGt4UtvZiB0nKOEN8II5AbCeHyaPU-VdQRsdA'
+    TOKEN = ''
     client = discord.Client(intents=intents)
 
     @client.event

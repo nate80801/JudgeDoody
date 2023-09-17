@@ -1,5 +1,5 @@
 import openai
-openai.api_key = "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"
+openai.api_key = ""
 
 # Make prompt is to be used in opening_statement
 def make_prompt(defendant, plaintiff, crime) -> str:
