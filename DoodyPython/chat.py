@@ -7,7 +7,7 @@ def make_prompt(defendant, plaintiff, crime) -> str:
   return f"""
   Today's trial:
   The defendant {defendant} is accused by plaintiff {plaintiff} of {crime}\n
-  You are to introduce yourself as Judge Doody and give an introduction to the court.
+  You are to introduce yourself as Judge Truly and give an introduction to the court.
   Do not give a final verdict, only introduce us in one short paragraph.
   End your statement commencing the beginning of the trial, allowing the plaintiff to start
   """
@@ -18,7 +18,7 @@ def opening_statement(defendant, plaintiff, crime):
     model="gpt-3.5-turbo",
     messages=[
       {"role": "system", "content": make_prompt(defendant, plaintiff, crime)},
-      {"role": "user", "content": "We will now let Judge Doody introduce the case"},
+      {"role": "user", "content": "We will now let Judge Truly introduce the case"},
 
     ]
   )
@@ -82,6 +82,6 @@ commands = """\n**Basic Commands**\n
 /rest: \t\t\t\t\t\t\t\t\t\t\t\t\t  --*Only accessible by the defendant, halts the trial*\n
 /quit: \t\t\t\t\t\t\t\t\t\t\t\t\t  --*Quits the current trial, clears the data*\n
 
-\n*To the those of you with jury duty in the audience, you can vote 👍 or 👎 to influence Judge Doody*"""
+\n*To the those of you with jury duty in the audience, you can vote 👍 or 👎 to influence Judge Truly*"""
 
 

@@ -54,7 +54,7 @@ def run_discord_bot():
 
     @client.event
     async def on_ready():
-        print("Judge Doody on duty")
+        print("Judge Truly on duty")
 
 
     Guilty = 0
@@ -99,8 +99,8 @@ def run_discord_bot():
             # Sent a message DURING a case
             if (CASE.turn == CASE.defendant) and str(message.content).lower() == "/rest":
                 # Break give verdict
-                await send_message("Gathering my thoughts...", message.channel, "Judge Doody")
-                await send_message("Considering jury decision...", message.channel, "Judge Doody")
+                await send_message("Gathering my thoughts...", message.channel, "Judge Truly")
+                await send_message("Considering jury decision...", message.channel, "Judge Truly")
 
                 # Wait 5 seconds to allow jury to decide
                 time.sleep(5)
@@ -126,7 +126,7 @@ def run_discord_bot():
                 response = await doody.final_judgement(transcript.reed(), CASE.crime)
 
 
-                await send_message("\n".join(response), message.channel, "Judge Doody")
+                await send_message("\n".join(response), message.channel, "Judge Truly")
                 transcript.log(f"\nVERDICT: {response[0]}\nSENTENCE: {response[1]} ")
 
                 f = open("log.txt", 'w')
@@ -142,7 +142,7 @@ def run_discord_bot():
             transcript.log(f"@{str(message.author)}: {str(message.content)}\n")
 
             CASE.turn_switch()
-            await send_message(f"{CASE.turn} , could you briefly explain your side of the story?", message.channel, "Judge Doody")
+            await send_message(f"{CASE.turn} , could you briefly explain your side of the story?", message.channel, "Judge Truly")
 
         else:
             msg = str(message.content)
@@ -151,9 +151,9 @@ def run_discord_bot():
                 flip_bool()
                 msg = msg[8:]
                 CASE.change(msg[:msg.index(" ")], user, msg[msg.index(" ") + 1:])
-                await send_message("Court starts now", message.channel, "Judge Doody")
+                await send_message("Court starts now", message.channel, "Judge Truly")
                 transcript.log(f"DEFENDANT: {CASE.defendant}\nPLAINTIFF: {CASE.plaintiff}\nCHARGES: {CASE.crime}\n")
-                await send_message(doody.opening_statement(CASE.defendant, CASE.plaintiff, CASE.crime), message.channel, "Judge Doody")
+                await send_message(doody.opening_statement(CASE.defendant, CASE.plaintiff, CASE.crime), message.channel, "Judge Truly")
 
 
 
